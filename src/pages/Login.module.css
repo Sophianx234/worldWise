@@ -1,7 +1,7 @@
 .login{
     background: #343a40;
-    height:calc( 100vh - 2*1.6rem);
-    margin: 1.6rem;
+    height:calc( 100vh - 2*2.8rem);
+    margin: 2.8rem 3rem;
 }
 
 .login section form{

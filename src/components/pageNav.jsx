@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import styles from './pageNav.module.css'
 function PageNav() {
     return (
@@ -8,22 +8,22 @@ function PageNav() {
             </NavLink>
             <ul>
                     <li>
-                <NavLink to='pricing'>
+                <NavLink to='/pricing'>
                     Pricing
                 </NavLink>
                     </li>
                 <li>
-                <NavLink to='product'>
+                <NavLink to='/product'>
                     Product
                 </NavLink>
                     </li>
 
                 <li className={styles.btn}>
-                <NavLink to='login'>
+                <Link to='/login'>
                     
                     Login
                     
-                </NavLink>    
+                </Link>    
                     </li>
             </ul>
             

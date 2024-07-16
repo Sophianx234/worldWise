@@ -21,7 +21,7 @@ function Login() {
                     
 
                     </div>
-                    <Button type='tertiary' loc='app'> Login</Button>
+                    <Button type='tertiary' loc='/app'> Login</Button>
                 </form>
             </section>
             

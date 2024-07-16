@@ -40,3 +40,7 @@
     color: #091c0c;
     font-weight: 480;
 }
+
+:global(a.active){
+    color: var(--green-color-primary);
+}

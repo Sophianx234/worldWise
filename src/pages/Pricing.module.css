@@ -1,0 +1,39 @@
+.pricing{
+    background-color: #343a40;
+    height: calc(100vh - 2*2.8rem);
+    margin: 2.8rem 3rem;
+    
+}
+
+.pricing section {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 120rem;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.pricing section img{
+    width: 75%;
+    justify-self:end;
+}
+
+.pricing h2{
+    font-size: 5.8rem;
+    line-height: 1;
+    letter-spacing: -.5px;
+    color: #e6e6e6;
+}
+
+.pricing p{
+    font-size: 2rem;
+    color: #d6d8d9;
+}
+
+.pricing div{
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3.8rem;
+}
