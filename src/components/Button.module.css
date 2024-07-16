@@ -16,3 +16,13 @@
     border-radius: .9rem;
     cursor: pointer;
 }
+.btn a{
+    text-decoration: none;
+    color: #091c0c;
+}
+
+
+
+ .tertiary{
+    height: 2rem;    
+}
