@@ -3,7 +3,9 @@ import styles from './pageNav.module.css'
 function PageNav() {
     return (
         <nav className={styles.nav}>
-            <img src="/logo.png" alt="dksldf" />
+            <NavLink to='/'>
+                <img src="/logo.png" alt="dksldf" />
+            </NavLink>
             <ul>
                     <li>
                 <NavLink to='pricing'>

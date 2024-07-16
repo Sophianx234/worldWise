@@ -1,0 +1,18 @@
+
+.primary{
+    background-color: var(--green-color-primary);
+}
+
+.btn{
+    text-transform: uppercase;
+    /* color: #2a2d24; */
+    color: #091c0c;
+    
+    border: none;
+    padding: 1.8rem 3.2rem;
+    font-size: 2rem;
+    background-color: var(--green-color-primary);
+    font-weight: 500;
+    border-radius: .9rem;
+    cursor: pointer;
+}
