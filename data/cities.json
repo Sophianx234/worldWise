@@ -1,0 +1,97 @@
+{
+  "cities": [
+    {
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "My favorite city so far!",
+      "position": {
+        "lat": 38.727881642324164,
+        "lng": -9.140900099907554
+      },
+      "id": "73930385"
+    },
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": "17806751"
+    },
+    {
+      "cityName": "Berlin",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2027-02-12T09:24:11.863Z",
+      "notes": "Amazing 😃",
+      "position": {
+        "lat": 52.53586782505711,
+        "lng": 13.376933665713324
+      },
+      "id": "98443197"
+    },
+    {
+      "cityName": "Faro",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "My favorite city so far!",
+      "position": {
+        "lat": 38.727881642324164,
+        "lng": -9.140900099907554
+      },
+      "id": "73938456"
+    },
+    {
+      "cityName": "Barcelona",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": "17866"
+    },
+    {
+      "id": "1700",
+      "cityName": "Accra",
+      "date": "2024-07-13T11:23:19.681Z",
+      "notes": "I really enjoyed the place ",
+      "emoji": "🇬🇭",
+      "position": {
+        "lat": "5.5997146469398436",
+        "lng": "-0.24170085307603456"
+      }
+    },
+    {
+      "id": "7692",
+      "cityName": "La Puebla de Valverde",
+      "date": "2024-07-13T17:08:50.487Z",
+      "notes": "I really enjoyed this city, man! it was awesome and i can't seem to forget the moment.",
+      "emoji": "🇪🇸",
+      "position": {
+        "lat": "40.34676895374489",
+        "lng": "-0.9515949017899651"
+      }
+    },
+    {
+      "id": "fae5",
+      "cityName": "Teruel",
+      "date": "2024-07-14T11:19:48.100Z",
+      "notes": "I love Terul and can't wait to be there ",
+      "emoji": "🇪🇸",
+      "position": {
+        "lat": "40.30484901951352",
+        "lng": "-1.093724113369692"
+      }
+    }
+  ]
+}

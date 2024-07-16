@@ -1,0 +1,7 @@
+.homepage{
+    background: url(/bg.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-color: black;
+}
