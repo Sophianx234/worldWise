@@ -1,0 +1,35 @@
+.product{
+    background-color: #343a40;
+    height: calc(100vh - 2*2.8rem);
+    margin: 2.8rem 3rem;
+   
+}
+
+.product section {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 120rem;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.product section img{
+    width: 75%;
+    justify-self:center;
+}
+
+.product h2{
+    font-size: 5.8rem;
+    line-height: 1;
+    letter-spacing: -.5px;
+    color: #e6e6e6;
+}
+
+.product p{
+    font-size: 2.2rem;
+    color: #d6d8d9;
+    width: 54rem;
+    line-height: 1.6;
+    margin-top: 2rem;
+}
