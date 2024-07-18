@@ -1,0 +1,53 @@
+.sidebar{
+
+    padding: 6.2rem  0;
+    background: #343a40;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+} 
+
+
+
+.sidebar img{
+    width: 36rem;
+}
+
+.btnBox{
+    display: flex;
+    justify-content: center;
+    margin-top: 5.4rem;
+    
+}
+.btnBox div{
+    background-color: #42484D;
+    border-radius: 1rem;
+
+}
+
+.sidebar button{
+    border: none;
+    padding: .8rem 3.4rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    
+    font-weight: 600;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+ :global(a.active button){
+
+    background-color: #242A2E;
+    border-radius: 1rem;
+}

@@ -1,0 +1,16 @@
+.cities{
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    overflow-y: scroll;    
+    height: 48vh;
+    background-color: transparent;
+    position: relative;
+
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
