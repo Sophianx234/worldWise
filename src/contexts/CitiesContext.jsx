@@ -18,6 +18,8 @@ function reducer(state, action){
         return {...state, isloading: action.payload}
         case 'error':
             return {...state, error: action.payload}
+        case 'countries/loaded':
+            return {...state, isloading: false, countries: state.cities}
     }
 }
 

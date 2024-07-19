@@ -29,7 +29,7 @@ function Sidebar() {
                 <Outlet/>
                 </div>
             </div>
-            <p>Damian X</p>
+            <footer > &copy; Copyright 2024 by Damian X Inc</footer>
         </div>
     )
 }

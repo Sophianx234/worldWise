@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: center;
     height: 100vh;
+    position: relative;
 } 
 
 
@@ -50,4 +51,17 @@
 
     background-color: #242A2E;
     border-radius: 1rem;
+}
+
+
+
+.sidebar footer{
+
+    font-size: 1.4rem;
+    font-style:oblique;
+    position: absolute;
+    bottom: 8%;
+    color: #ffffff97;
+
+    
 }

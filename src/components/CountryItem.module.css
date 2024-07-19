@@ -1,0 +1,42 @@
+.countryItem{
+
+    position: relative;
+
+}
+
+.countryItem div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #42484D;
+    padding-inline: 8.8rem;
+    padding-block: 1.4rem;
+    box-shadow: 0 1rem 2rem  rgba(0,0,0,.1);
+    border-radius: 1rem;
+    cursor: pointer;
+    z-index: 0;
+
+    
+}
+
+.countrydec{
+    background-color: #ff922b;
+    z-index: 1000;
+    position: absolute;
+    width: .8rem;
+    top: 0;
+    bottom: 0;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+
+}
+
+.countryItem span{
+    font-size: 3.8rem;
+}
+
+.countryItem  div p{
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #e6e6e6;
+}
