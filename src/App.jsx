@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import AppLayout from './pages/AppLayout'
 import Cities from './components/Cities'
 import Countries from './components/Countries'
+import Form from './components/Form'
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
     <Route path='app' element={<AppLayout/>}>
     <Route path='cities' element={<Cities/>}/>
     <Route path='countries' element={<Countries/>}/>
+    <Route path='form' element={<Form/>}/>
     </Route>
     <Route path='*' element={<PageNotFound/>}/> 
    </Routes>

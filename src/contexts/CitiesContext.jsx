@@ -9,6 +9,9 @@ const initialState = {
     error: ''
 
 }
+/* 
+[...new Set(cities.map(city => city.country).filter(city=>city !==undefined))]
+*/
 
 function reducer(state, action){
     switch(action.type){
@@ -19,7 +22,8 @@ function reducer(state, action){
         case 'error':
             return {...state, error: action.payload}
         case 'countries/loaded':
-            return {...state, isloading: false, countries: state.cities}
+            return {...state, isloading: false, countries: [...new Set(state.cities.map(city => city.country).filter(city=>city !==undefined))]}
+        
     }
 }
 
@@ -57,7 +61,8 @@ function CitiesProvider({children}){
         cities,
         countries,
         isloading,
-        error
+        error,
+        dispatch
      }}
      >
         {children}

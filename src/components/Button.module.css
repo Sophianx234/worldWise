@@ -1,6 +1,8 @@
 
-.primary{
+:global(.primary){
     background-color: var(--green-color-primary);
+    z-index: 100;
+    padding: 1.8rem 3.2rem;
 }
 
 .btn{
@@ -9,20 +11,34 @@
     color: #091c0c;
     
     border: none;
-    padding: 1.8rem 3.2rem;
     font-size: 2rem;
     background-color: var(--green-color-primary);
     font-weight: 500;
     border-radius: .9rem;
     cursor: pointer;
 }
-.btn a{
+:global(.btn a){
     text-decoration: none;
     color: #091c0c;
+    display: inline-block;
 }
 
 
 
- .tertiary{
-    height: 2rem;    
+ :global(.tertiary){
+    padding: 1rem 3rem ;   
 }
+
+:global(.secondary){
+    padding: .8rem 2.8rem;
+}
+
+:global(.transparent){
+    padding: .8rem 2.8rem;
+    background-color: transparent;
+    border: 2px solid #fffef8;
+    color: #fffef8;
+
+}
+
+

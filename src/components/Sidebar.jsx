@@ -6,7 +6,7 @@ function Sidebar() {
         <div className={styles.sidebar}>
             <img src="/logo.png" alt="logo" />
             <div className={styles.btnBox}>
-                <div>
+                <div className={styles.sidebarBtn}>
 
                     <NavLink to='cities'>
                 <button>

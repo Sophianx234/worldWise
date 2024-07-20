@@ -1,11 +1,19 @@
 import { useCities } from "../contexts/CitiesContext"
 import CountryItem from "./CountryItem";
 import styles from './Countries.module.css'
+import { useEffect } from "react";
 
 function Countries() {
-    const {cities} = useCities()
-    const countries = [...new Set(cities.map(city => city.country).filter(city=>city !==undefined))];
+    const {dispatch,countries} = useCities()
 
+    useEffect(function (){
+        
+
+            dispatch({type:'countries/loaded'})
+        
+
+    },[])
+   
      
       
 
