@@ -6,7 +6,8 @@ const initialState = {
     cities: [],
     isLoading: false,
     countries: [],
-    error: ''
+    error: '',
+    currCity: null
 
 }
 /* 
@@ -23,13 +24,15 @@ function reducer(state, action){
             return {...state, error: action.payload}
         case 'countries/loaded':
             return {...state, isloading: false, countries: [...new Set(state.cities.map(city => city.country).filter(city=>city !==undefined))]}
+        case  'currCity/loaded':
+            return {...state, currCity: action.payload}
         
     }
 }
 
 
 function CitiesProvider({children}){
-    const [{cities,isloading,countries,error},dispatch] = useReducer(reducer,initialState);
+    const [{cities,isloading,countries,error,currCity},dispatch] = useReducer(reducer,initialState);
     console.log(cities)
     useEffect(function (){
         async function fetchCities(){
@@ -62,7 +65,8 @@ function CitiesProvider({children}){
         countries,
         isloading,
         error,
-        dispatch
+        dispatch,
+        currCity
      }}
      >
         {children}

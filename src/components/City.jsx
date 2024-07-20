@@ -2,14 +2,20 @@ import { useParams, useSearchParams } from "react-router-dom"
 import { useCities } from "../contexts/CitiesContext"
 import styles from './City.module.css'
 import Button from "./Button"
+import { useEffect } from "react"
 
 function City() {
-    const {cities} = useCities()
+    const {cities, dispatch} = useCities()
 
     const {id}= useParams()
     console.log(id)
     const currCity = cities.find(city=>city.id === id)
     console.log(currCity)
+
+    useEffect(function(){
+        dispatch({type: 'currCity/loaded', payload: currCity})
+        
+    },[dispatch, currCity])
 
     const now = new Date(currCity?.date)
     const option = {
