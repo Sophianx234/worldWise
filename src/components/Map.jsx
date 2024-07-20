@@ -1,12 +1,17 @@
+import { useEffect, useState } from 'react'
 import styles from './Map.module.css'
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet'
+import { map } from 'leaflet'
+import { useNavigate } from 'react-router-dom'
 function Map() {
   const customClass = '.leaflet-popup-content-wrapper leaflet-popup-tip leaflet-popup-content'
+  
+  
     return (
         <div className={styles.map}>
           
 
-          <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false} className={styles.leaflet} >
+          <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true} className={styles.leaflet} >
   <TileLayer
     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -16,10 +21,26 @@ function Map() {
       A pretty CSS3 popup Damian. <br /> Easily customizable.
     </Popup>
   </Marker>
+  <DetectClick/>
+  <ChangeCenter/>
 </MapContainer>
           
         </div>
     )
+}
+
+function ChangeCenter({ position }) {
+  const map = useMap();
+  map.setView(position);
+  return null;
+}
+
+function DetectClick() {
+  const navigate = useNavigate();
+
+  useMapEvents({
+    click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+  });
 }
 
 export default Map
