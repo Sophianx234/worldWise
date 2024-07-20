@@ -9,6 +9,7 @@ import AppLayout from './pages/AppLayout'
 import Cities from './components/Cities'
 import Countries from './components/Countries'
 import Form from './components/Form'
+import City from './components/City'
 
 function App() {
   
@@ -22,6 +23,7 @@ function App() {
     <Route path='login' element={<Login/>}/>
     <Route path='app' element={<AppLayout/>}>
     <Route path='cities' element={<Cities/>}/>
+    <Route path='cities/:id' element={<City/>}/>
     <Route path='countries' element={<Countries/>}/>
     <Route path='form' element={<Form/>}/>
     </Route>
