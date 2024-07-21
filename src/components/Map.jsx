@@ -1,32 +1,50 @@
-import { useEffect, useState } from 'react'
-import styles from './Map.module.css'
-import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet'
-import { map } from 'leaflet'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react";
+import styles from "./Map.module.css";
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+  useMap,
+  useMapEvents,
+} from "react-leaflet";
+import { useNavigate } from "react-router-dom";
+import { useCities } from "../contexts/CitiesContext";
 function Map() {
-  const customClass = '.leaflet-popup-content-wrapper leaflet-popup-tip leaflet-popup-content'
-  
-  
-    return (
-        <div className={styles.map}>
-          
+  const customClass =
+    ".leaflet-popup-content-wrapper leaflet-popup-tip leaflet-popup-content";
+  const [mapPosition, setMapPosition] = useState([40, 0]);
+  const { cities } = useCities();
 
-          <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true} className={styles.leaflet} >
-  <TileLayer
-    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-  />
-  <Marker position={[51.505, -0.09]} >
-    <Popup className={styles.customClass} >
-      A pretty CSS3 popup Damian. <br /> Easily customizable.
-    </Popup>
-  </Marker>
-  <DetectClick/>
-  <ChangeCenter/>
-</MapContainer>
-          
-        </div>
-    )
+  return (
+    <div className={styles.map}>
+      <MapContainer
+        center={[51.505, -0.09]}
+        zoom={8}
+        scrollWheelZoom={true}
+        className={styles.leaflet}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+        {cities.map((city) => (
+          <Marker
+            position={[city.position.lat, city.position.lng]}
+            key={city.id}
+          >
+            <Popup className={styles.customClass}>
+              <span>{city.emoji}</span>
+              <span>{city.cityName}</span>
+            </Popup>
+          </Marker>
+        ))}
+        <ChangeCenter position={mapPosition} />
+        <DetectClick />
+      </MapContainer>
+    </div>
+  );
 }
 
 function ChangeCenter({ position }) {
@@ -43,4 +61,4 @@ function DetectClick() {
   });
 }
 
-export default Map
+export default Map;

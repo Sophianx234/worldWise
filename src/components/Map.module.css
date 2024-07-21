@@ -26,5 +26,9 @@
 
 :global(.leaflet-popup-content){
     color: #fff;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+
 }
