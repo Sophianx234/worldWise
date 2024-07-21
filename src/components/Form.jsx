@@ -29,7 +29,6 @@ function Form() {
         getCity()
     },[lat,lng])
     
-    console.log(emoji)
     
 
     return (

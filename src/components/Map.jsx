@@ -13,7 +13,7 @@ import { useCities } from "../contexts/CitiesContext";
 function Map() {
   const customClass =
     ".leaflet-popup-content-wrapper leaflet-popup-tip leaflet-popup-content";
-  const [mapPosition, setMapPosition] = useState([40, 0]);
+  const [mapPosition, setMapPosition] = useState([9.432919,-0.848452]);
   const { cities } = useCities();
 
   return (
