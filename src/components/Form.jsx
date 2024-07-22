@@ -2,8 +2,16 @@ import { useEffect, useState } from 'react'
 import Button from './Button'
 import styles from './Form.module.css'
 import { useSearchParams } from 'react-router-dom'
+import { RotateLoader } from 'react-spinners'
+
+const  override = {
+    display: "block",
+    margin: "20rem auto",
+    borderColor: "red",
+  }
 function Form() {
     const [retrievedCity, setRetrievedCity] = useState({})
+    const [isLoading, setIsLoading] = useState(false)
     
     const [searchParams,setSearchParams] = useSearchParams();
     const lat = searchParams.get('lat')
@@ -20,21 +28,35 @@ function Form() {
 
     useEffect(function (){
         async function getCity(){
+            setIsLoading(true)
             const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}`);
             if(!res.ok) throw new Error('Could not fetch from server')
                 const data = await res.json();
             setRetrievedCity(data)
              setEmoji(getFlagEmoji(data.countryCode))
+             setIsLoading(false)
         }
         getCity()
     },[lat,lng])
     
-    
+    const color = '#fff'
 
     return (
-        
-            <form className={styles.form} >
-                <div>
+
+        <div>
+
+        {
+          isLoading?  <RotateLoader
+        color={color}
+        loading={true}
+        cssOverride={override}
+        size={20}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+        margin={10}
+        /> :
+             <form className={styles.form} >
+            <div>
                 <label htmlFor="">City name</label>
                 <input type="text" value={retrievedCity.city}  />
                 <span>{emoji}</span>
@@ -54,6 +76,10 @@ function Form() {
                 </div>
 
             </form>
+            } 
+        </div>
+            
+        
             
         
     )

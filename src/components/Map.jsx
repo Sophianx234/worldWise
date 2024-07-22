@@ -10,6 +10,7 @@ import {
 } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
 import { useCities } from "../contexts/CitiesContext";
+import Button from "./Button";
 function Map() {
   const customClass =
     ".leaflet-popup-content-wrapper leaflet-popup-tip leaflet-popup-content";
@@ -18,6 +19,7 @@ function Map() {
 
   return (
     <div className={styles.map}>
+      <Button type='secondary abs'>Use your location</Button>
       <MapContainer
         center={[51.505, -0.09]}
         zoom={8}

@@ -40,5 +40,16 @@
     color: #fffef8;
 
 }
+:global(.abs){
+    position: absolute;
+    z-index: 1000;
+    left: 50%;
+    bottom: 6%;
+    transform: translate(-50%,0);
+    color: #113417;
+    border-radius: 4px;
+    font-weight: 700;
+    padding: 1.4rem;
+}
 
 
