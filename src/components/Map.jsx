@@ -8,18 +8,46 @@ import {
   useMap,
   useMapEvents,
 } from "react-leaflet";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useCities } from "../contexts/CitiesContext";
 import Button from "./Button";
 function Map() {
   const customClass =
     ".leaflet-popup-content-wrapper leaflet-popup-tip leaflet-popup-content";
   const [mapPosition, setMapPosition] = useState([9.432919,-0.848452]);
+  const [userLocation, setUserLocation] = useState(null);
+  const [center, setCenter] = useState(null);
   const { cities } = useCities();
-
-  return (
+  const [searchParams, setSearchParams] = useSearchParams();
+  const lat = searchParams.get('lat')
+  const lng = searchParams.get('lng')
+  console.log(lng,lat)
+  
+  function  handleButtonClick(e){
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            const userLocation = { latitude, longitude };
+            console.log('User location:', userLocation); // Log the user's location
+            setUserLocation(userLocation);
+          },
+          (error) => {
+            console.error('Error getting location:', error);
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+          }
+        );
+      } else {
+        console.error('Geolocation is not supported by this browser.');
+          }
+        }
+      return (
     <div className={styles.map}>
-      <Button type='secondary abs'>Use your location</Button>
+      <Button type='secondary abs' onclick={handleButtonClick}>Use your location</Button>
       <MapContainer
         center={[51.505, -0.09]}
         zoom={8}
@@ -42,7 +70,7 @@ function Map() {
             </Popup>
           </Marker>
         ))}
-        <ChangeCenter position={mapPosition} />
+        <ChangeCenter position={userLocation? [userLocation.latitude, userLocation.longitude]:lat && lng ? [lat, lng]: mapPosition} />
         <DetectClick />
       </MapContainer>
     </div>
@@ -59,7 +87,10 @@ function DetectClick() {
   const navigate = useNavigate();
 
   useMapEvents({
-    click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+    click: (e) =>{
+      navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`)
+      
+    }
   });
 }
 

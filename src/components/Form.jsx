@@ -9,15 +9,17 @@ const  override = {
     margin: "20rem auto",
     borderColor: "red",
   }
-function Form() {
-    const [retrievedCity, setRetrievedCity] = useState({})
-    const [isLoading, setIsLoading] = useState(false)
-    
+  
+  function Form() {
     const [searchParams,setSearchParams] = useSearchParams();
     const lat = searchParams.get('lat')
     const lng = searchParams.get('lng')
+    const [retrievedCity, setRetrievedCity] = useState({})
+    const [isLoading, setIsLoading] = useState(false)
+
     console.log(retrievedCity)
     const [emoji, setEmoji] = useState('')
+
     function getFlagEmoji(countryCode) {
         const codePoints =  countryCode?.toUpperCase().split("").map((char) => 127397 + char.charCodeAt(0));
         return String.fromCodePoint(...codePoints);
@@ -55,7 +57,7 @@ function Form() {
         data-testid="loader"
         margin={10}
         /> :
-             <form className={styles.form} >
+        <form className={styles.form} >
             <div>
                 <label htmlFor="">City name</label>
                 <input type="text" value={retrievedCity.city}  />
@@ -85,5 +87,6 @@ function Form() {
     )
 }
 
-export default Form
+
+export  default Form
 
