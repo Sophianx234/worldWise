@@ -21,7 +21,6 @@ function Map() {
   const [searchParams, setSearchParams] = useSearchParams();
   const lat = searchParams.get('lat')
   const lng = searchParams.get('lng')
-  console.log(lng,lat)
   
   function  handleButtonClick(e){
       if (navigator.geolocation) {
@@ -29,7 +28,6 @@ function Map() {
           (position) => {
             const { latitude, longitude } = position.coords;
             const userLocation = { latitude, longitude };
-            console.log('User location:', userLocation); // Log the user's location
             setUserLocation(userLocation);
           },
           (error) => {

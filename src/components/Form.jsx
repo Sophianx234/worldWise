@@ -3,6 +3,7 @@ import Button from './Button'
 import styles from './Form.module.css'
 import { useSearchParams } from 'react-router-dom'
 import { RotateLoader } from 'react-spinners'
+import Error from './Error'
 
 const  override = {
     display: "block",
@@ -56,7 +57,7 @@ const  override = {
         aria-label="Loading Spinner"
         data-testid="loader"
         margin={10}
-        /> :
+        /> : !retrievedCity.city? <Error/>:
         <form className={styles.form} >
             <div>
                 <label htmlFor="">City name</label>
