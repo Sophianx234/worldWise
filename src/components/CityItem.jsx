@@ -7,7 +7,7 @@ function CityItem({city}) {
         month: 'long',  
         day: 'numeric',
     };
-    const {currCity} = useCities();
+    const {currCity,dispatch} = useCities();
     console.log(currCity)
     
 
@@ -16,6 +16,11 @@ function CityItem({city}) {
     // Create a formatter
     const formatter = new Intl.DateTimeFormat('en-US', options)
     const date = formatter.format(dateObj)
+    function handleDeleteCity(e){
+        e.preventDefault();
+        dispatch({type:'deleteCity', payload: city.cityName})
+        
+    }
     
     return (
         <div  className={styles.box}>
@@ -25,7 +30,7 @@ function CityItem({city}) {
             <div className={styles.cityBox} >
                 <span>{city.emoji}</span>{city.cityName}
                 </div >
-            <div className={styles.dateBox}><span>({date})</span><button >&times;</button></div>
+            <div className={styles.dateBox}><span>({date})</span><button onClick={handleDeleteCity} >&times;</button></div>
         </div>
             </NavLink>
         </div>

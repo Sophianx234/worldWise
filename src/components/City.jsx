@@ -14,7 +14,7 @@ function City() {
 
     useEffect(function(){
         dispatch({type: 'currCity/loaded', payload: currCity})
-        
+
     },[dispatch, currCity])
 
     const now = new Date(currCity?.date)
@@ -23,6 +23,7 @@ function City() {
         day: 'numeric',
         year: 'numeric'
     }
+    
     const formatter = new Intl.DateTimeFormat('en-US', option)
     const date = formatter.format(now)
     console.log(date)

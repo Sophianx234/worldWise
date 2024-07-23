@@ -26,6 +26,8 @@ function reducer(state, action){
             return {...state, isloading: false, countries: [...new Set(state.cities.map(city => city.country).filter(city=>city !==undefined))]}
         case  'currCity/loaded':
             return {...state, currCity: action.payload}
+        case 'deleteCity':
+            return {...state, cities: state.cities.filter(city=>city.cityName !== action.payload)}
         
     }
 }
