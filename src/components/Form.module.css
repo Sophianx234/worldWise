@@ -23,7 +23,7 @@
 
 } 
 
-:global(input.date){
+:global(label input){
     width: 40rem;
 }
 :global(.date-container ){

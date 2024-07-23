@@ -19,6 +19,7 @@ const  override = {
     const lng = searchParams.get('lng')
     const [retrievedCity, setRetrievedCity] = useState({})
     const [isLoading, setIsLoading] = useState(false)
+    const [date , setDate] = useState('')
 
     console.log(retrievedCity)
     const [emoji, setEmoji] = useState('')
@@ -70,7 +71,7 @@ const  override = {
 
                 
                 <label htmlFor="">When did you go to {retrievedCity.city}
-                <DatePicker className='date'/>
+                <DatePicker selected={date} onChange={date=>setDate(date)}/>
 
                 </label>
                 
