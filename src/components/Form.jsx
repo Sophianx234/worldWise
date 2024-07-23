@@ -4,6 +4,8 @@ import styles from './Form.module.css'
 import { useSearchParams } from 'react-router-dom'
 import { RotateLoader } from 'react-spinners'
 import Error from './Error'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const  override = {
     display: "block",
@@ -12,7 +14,7 @@ const  override = {
   }
   
   function Form() {
-    const [searchParams,setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const lat = searchParams.get('lat')
     const lng = searchParams.get('lng')
     const [retrievedCity, setRetrievedCity] = useState({})
@@ -59,17 +61,21 @@ const  override = {
         margin={10}
         /> : !retrievedCity.city? <Error/>:
         <form className={styles.form} >
-            <div>
-                <label htmlFor="">City name</label>
+            
+                <label htmlFor="">City name
                 <input type="text" value={retrievedCity.city}  />
-                <span>{emoji}</span>
-                </div>
 
-                <div>
-                <label htmlFor="">When did you go to {retrievedCity.city}</label>
-                <input type="text"   />
-                </div>
-                <div>
+                <span>{emoji}</span>
+                </label>
+
+                
+                <label htmlFor="">When did you go to {retrievedCity.city}
+                <DatePicker className='date'/>
+
+                </label>
+                
+                
+                <div className='date-container'>
                 <label htmlFor="">Notes about your trip to {retrievedCity.city}</label>
                 <textarea  id="textarea"></textarea>
                 </div>
@@ -80,7 +86,7 @@ const  override = {
 
             </form>
             } 
-        </div>
+            </div>
             
         
             

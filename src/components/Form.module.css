@@ -12,7 +12,7 @@
     padding-left: 3.8rem;
 }
 
-.form div{
+.form label{
     display: flex;
     flex-direction: column;
     font-size: 2rem;
@@ -20,6 +20,19 @@
     gap: .6rem;
     color: #ebebec;
     position: relative;
+
+} 
+
+:global(input.date){
+    width: 40rem;
+}
+:global(.date-container ){
+    display: grid;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: 600;
+    gap: .6rem;
+    color: #ebebec;
 
 }
 
