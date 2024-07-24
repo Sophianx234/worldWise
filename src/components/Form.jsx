@@ -6,6 +6,8 @@ import { RotateLoader } from 'react-spinners'
 import Error from './Error'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useCities } from '../contexts/CitiesContext'
+
 
 const  override = {
     display: "block",
@@ -20,17 +22,20 @@ const  override = {
     const [retrievedCity, setRetrievedCity] = useState({})
     const [isLoading, setIsLoading] = useState(false)
     const [date , setDate] = useState('')
+    const [notes, setNotes]= useState('')
+    const [cityName,setCityName] = useState(retrievedCity.city)
 
-    console.log(retrievedCity)
     const [emoji, setEmoji] = useState('')
+    const {dispatch} = useCities()
 
     function getFlagEmoji(countryCode) {
         const codePoints =  countryCode?.toUpperCase().split("").map((char) => 127397 + char.charCodeAt(0));
         return String.fromCodePoint(...codePoints);
     }
-    
 
     
+console.log(retrievedCity)
+
 
     useEffect(function (){
         async function getCity(){
@@ -46,7 +51,72 @@ const  override = {
     },[lat,lng])
     
     const color = '#fff'
+    function handleSubmit(e){
+        e.preventDefault();
+        console.log('Damian X')
+        setIsLoading(true)
+        const {
+            city: cityName,
+            countryName: country,
+            latitude: lat,
+            longitude: lng
+        } = retrievedCity
 
+        const newCity = {
+            cityName, 
+            country,
+            date: date.toISOString(),
+            notes,
+            emoji,
+            position: {lat,lng},
+            id: crypto.randomUUID().split('-')[0]
+        }
+        console.log(newCity)
+        dispatch({type: 'cities/added', payload: newCity})
+        setIsLoading(false)
+        
+    /* const cityObj = {
+        id: "1700",
+      cityName: "Accra",
+      country: "Ghana",
+      date: "2024-07-13T11:23:19.681Z",
+      notes: "I really enjoyed the place ",
+      emoji: "🇬🇭",
+      position: {
+        lat: "5.5997146469398436",
+        lng: "-0.24170085307603456"
+        }
+        }
+        console.log('newCity', newCity)
+        
+        const {
+
+         city ,
+         countryName ,
+          latitude,
+          longitude
+        
+      } = retrievedCity; 
+      
+      console.log(retrievedCity)
+      /* const newCity = {
+        cityName,
+        countryName,
+          date: date.toISOString(),
+          notes,
+          emoji,
+          id: crypto.randomUUID(),
+          position: {
+            latitude,
+            longitude
+        }
+        
+    } 
+    */
+   
+   
+   
+}
     return (
 
         <div>
@@ -61,28 +131,28 @@ const  override = {
         data-testid="loader"
         margin={10}
         /> : !retrievedCity.city? <Error/>:
-        <form className={styles.form} >
+        <form className={styles.form} onSubmit={handleSubmit}  >
             
                 <label htmlFor="">City name
-                <input type="text" value={retrievedCity.city}  />
+                <input type="text" value={retrievedCity.city} onChange={e=>setCityName(e.target.value)} required />
 
                 <span>{emoji}</span>
                 </label>
 
                 
                 <label htmlFor="">When did you go to {retrievedCity.city}
-                <DatePicker selected={date} onChange={date=>setDate(date)}/>
+                <DatePicker selected={date} onChange={date=>setDate(date)} required/>
 
                 </label>
                 
                 
                 <div className='date-container'>
                 <label htmlFor="">Notes about your trip to {retrievedCity.city}</label>
-                <textarea  id="textarea"></textarea>
+                <textarea  id="textarea" value={notes} onChange={e=>setNotes(e.target.value)}></textarea>
                 </div>
                 <div className={styles.btnBox}>
-                    <Button type='secondary'>Add</Button>
-                    <Button type='transparent' >&larr; Back</Button>
+                    <Button type='secondary' >Add</Button>
+                    <Button type='transparent'   >&larr; Back</Button>
                 </div>
 
             </form>
@@ -94,6 +164,7 @@ const  override = {
         
     )
 }
+  
 
 
 export  default Form

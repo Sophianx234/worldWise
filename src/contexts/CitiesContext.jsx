@@ -28,6 +28,8 @@ function reducer(state, action){
             return {...state, currCity: action.payload}
         case 'deleteCity':
             return {...state, cities: state.cities.filter(city=>city.cityName !== action.payload)}
+        case 'cities/added':
+            return {...state, cities: [...state.cities, action.payload], isloading: false}
         
     }
 }

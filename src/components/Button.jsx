@@ -9,13 +9,20 @@ function Button({children, onclick, type , loc}) {
 
         }
     }
+    if(loc)
     return (
-           <Link to={loc}>
+            <Link to={loc}>
         <button className={ `${styles.btn} ${type}`} onClick={onclick}>
             {children}
         </button>
            </Link>
     )
+    else 
+    return (
+        <button className={ `${styles.btn} ${type}`} onClick={onclick}>
+            {children}
+        </button>
+)
 }
 
 export default Button
