@@ -22,9 +22,6 @@ function Login() {
         else return console.log('login in not successful')
     }
 
-    function handleLogout(e){
-        dispatch({type:'logout'})
-    }
     return (
         <div className={styles.login}>
             <PageNav/>

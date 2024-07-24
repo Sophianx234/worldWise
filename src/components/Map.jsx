@@ -23,7 +23,17 @@ function Map() {
   const lat = searchParams.get('lat')
   const lng = searchParams.get('lng')
   const {user} = useAuth();
+  const navigate = useNavigate();
+  const {dispatch} = useAuth();
+
   
+  function handleLogout(e){
+    e.preventDefault()
+    dispatch({type:'logout'})
+    navigate('/login')
+
+
+}
   function  handleButtonClick(e){
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
@@ -47,7 +57,7 @@ function Map() {
         }
       return (
     <div className={styles.map}>
-      <div className={styles.avatar}> <img src={user.avatar} alt="" /> <span>Welcome, {user.name.split(' ')[0]}</span> <button>Logout</button></div>
+      <div className={styles.avatar}> <img src={user.avatar} alt="" /> <span>Welcome, {user.name.split(' ')[0]}</span> <button onClick={handleLogout}>Logout</button></div>
       <Button type='secondary abs' onclick={handleButtonClick}>Use your location</Button>
       <MapContainer
         center={[51.505, -0.09]}
