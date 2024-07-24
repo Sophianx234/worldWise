@@ -37,6 +37,13 @@ function City() {
             <p>{date}</p>
 
             </div>
+            { currCity.notes &&
+            <div className={styles.date}>
+                <p>Your Notes </p>
+                <p>{currCity.notes}</p>
+
+
+                </div>}
             <div className={styles.link}>
                 <p>learn More</p>
                 <a href="">Check out {currCity.cityName} on Wikipedia &rarr;</a>

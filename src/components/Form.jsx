@@ -26,7 +26,7 @@ const  override = {
     const [cityName,setCityName] = useState(retrievedCity.city)
 
     const [emoji, setEmoji] = useState('')
-    const {dispatch} = useCities()
+    const {dispatch,cities} = useCities()
 
     function getFlagEmoji(countryCode) {
         const codePoints =  countryCode?.toUpperCase().split("").map((char) => 127397 + char.charCodeAt(0));
@@ -52,16 +52,18 @@ console.log(retrievedCity)
     
     const color = '#fff'
     function handleSubmit(e){
+
         e.preventDefault();
+
         console.log('Damian X')
-        setIsLoading(true)
         const {
             city: cityName,
             countryName: country,
             latitude: lat,
             longitude: lng
         } = retrievedCity
-
+        
+        if(cities.find(city=>city.cityName === cityName)) return 
         const newCity = {
             cityName, 
             country,
@@ -73,7 +75,6 @@ console.log(retrievedCity)
         }
         console.log(newCity)
         dispatch({type: 'cities/added', payload: newCity})
-        setIsLoading(false)
         
     /* const cityObj = {
         id: "1700",
