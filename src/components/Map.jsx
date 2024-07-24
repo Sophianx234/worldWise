@@ -11,6 +11,7 @@ import {
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useCities } from "../contexts/CitiesContext";
 import Button from "./Button";
+import { useAuth } from "../contexts/AuthenticationContext";
 function Map() {
   const customClass =
     ".leaflet-popup-content-wrapper leaflet-popup-tip leaflet-popup-content";
@@ -21,6 +22,7 @@ function Map() {
   const [searchParams, setSearchParams] = useSearchParams();
   const lat = searchParams.get('lat')
   const lng = searchParams.get('lng')
+  const {user} = useAuth();
   
   function  handleButtonClick(e){
       if (navigator.geolocation) {
@@ -45,6 +47,7 @@ function Map() {
         }
       return (
     <div className={styles.map}>
+      <div className={styles.avatar}> <img src={user.avatar} alt="" /> <span>Welcome, {user.name.split(' ')[0]}</span> <button>Logout</button></div>
       <Button type='secondary abs' onclick={handleButtonClick}>Use your location</Button>
       <MapContainer
         center={[51.505, -0.09]}

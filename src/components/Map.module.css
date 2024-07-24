@@ -12,6 +12,47 @@
 .popup{
 }
 
+.avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2D3439;
+    width: fit-content;
+    padding: 1.2rem 3.2rem;
+    font-size: 1.4rem;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    z-index: 1000;
+    gap: 1.2rem;
+    border-radius: 1rem;
+}
+.avatar img{
+    width: 6.2rem;
+    border-radius: 50%;
+}
+.avatar button{
+    border: none;
+    background-color: #42484D;
+    color: #fff;
+    padding: .8rem 1.2rem;
+    font-weight: 600;
+    border-radius: .6rem;
+    cursor: pointer;
+
+}
+.avatar button:hover{
+    background-color: #3b4145 ;
+}
+
+.avatar span{
+    color: #eaebeb;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
 :global(.leaflet-popup-content-wrapper){
     background-color: #2D3439;
     padding: 1.2rem 4rem;
