@@ -19,9 +19,11 @@ function Button({children, onclick, type , loc}) {
     )
     else 
     return (
+        <Link>
         <button className={ `${styles.btn} ${type}`} onClick={onclick}>
             {children}
         </button>
+        </Link>
 )
 }
 
