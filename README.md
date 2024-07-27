@@ -1,6 +1,5 @@
-Sure, here's a markdown for your README:
 
-```markdown
+
 # World Wise
 
 World Wise is a React application that provides a global map for users to explore. Users can mark places they have visited and write notes about their experiences.
@@ -67,7 +66,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Thanks to the creators of React, Leaflet, and React-Leaflet for their amazing tools.
 - Special thanks to all the contributors who have helped improve this project.
 
-```
+
 
 ## Author
 
