@@ -72,6 +72,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Sophian Abdul Rahman (Damian X)**
 
-- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/your-profile)
-- GitHub: [Your GitHub Profile](https://github.com/your-username)
-- Email: [your-email@example.com]
+- LinkedIn: [https://www.linkedin.com/in/sophian-abdul-rahman-909125230/](https://www.linkedin.com/in/your-profile)
+- GitHub: [https://github.com/Sophianx234](https://github.com/your-username)
+- Email: [dx4336969@gmail.com]
