@@ -15,7 +15,7 @@ World Wise is a React application that provides a global map for users to explor
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your-username/world-wise.git
+    git clone https://github.com/Sophianx234/worldWise.git
     ```
 2. Navigate to the project directory:
     ```sh
