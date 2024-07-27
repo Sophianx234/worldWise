@@ -17,14 +17,18 @@ function Button({children, onclick, type , loc}) {
         </button>
            </Link>
     )
-    else 
+    else if(type==='tertiary')
     return (
         <Link>
         <button className={ `${styles.btn} ${type}`} onClick={onclick}>
             {children}
         </button>
         </Link>
+        
 )
+else return <button className={ `${styles.btn} ${type}`} onClick={onclick}>
+{children}
+</button>
 }
 
 export default Button

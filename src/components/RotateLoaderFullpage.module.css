@@ -1,0 +1,8 @@
+.rotate{
+    background-color: #343A40;
+    height:calc( 100vh - 2*2.8rem);
+    margin: 2.8rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

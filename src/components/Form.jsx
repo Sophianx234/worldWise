@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Button from './Button'
 import styles from './Form.module.css'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { RotateLoader } from 'react-spinners'
 import Error from './Error'
 import DatePicker from "react-datepicker";
@@ -24,7 +24,7 @@ const  override = {
     const [date , setDate] = useState('')
     const [notes, setNotes]= useState('')
     const [cityName,setCityName] = useState(retrievedCity.city)
-
+    const navigate = useNavigate()
     const [emoji, setEmoji] = useState('')
     const {dispatch,cities} = useCities()
 
@@ -75,6 +75,8 @@ console.log(retrievedCity)
         }
         console.log(newCity)
         dispatch({type: 'cities/added', payload: newCity})
+        navigate('/app/cities')
+        
         
     /* const cityObj = {
         id: "1700",
