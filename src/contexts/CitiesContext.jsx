@@ -42,12 +42,12 @@ function CitiesProvider({children}){
         async function fetchCities(){
             try{
                 dispatch({type: 'loading', payload: true})
-                const res = await fetch('http://localhost:8000/cities')
+                const res = await fetch('http://worldwise-api-qbqq.onrender.com/api/v1/cities')
                 if(!res.ok) throw new Error('Could not fetch from cities server')
                 const data = await res.json();
-                dispatch({type: 'cities/loaded', payload: data})
+            console.log('cities', data.Cities.cities)
+                dispatch({type: 'cities/loaded', payload: data.Cities.cities})
                 
-
 
             }catch(err){
                 dispatch({type:'error', payload: err.message})
