@@ -4,7 +4,7 @@ const AuthContext = createContext();
 const user = {
     name : 'Damian X',
     email: 'boruto@gmail.com',
-    password: 'xyz@3446',
+    password: 'xyz@223344',
     avatar: "https://i.pravatar.cc/100?u=zz",
 }
 const initialState = {
