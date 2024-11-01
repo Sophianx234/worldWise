@@ -3,8 +3,8 @@ import { createContext, useContext, useReducer, useState } from "react";
 const AuthContext = createContext();
 const user = {
     name : 'Damian X',
-    email: 'dx4336969@gmail.com',
-    password: 'damianx123',
+    email: 'boruto@gmail.com',
+    password: 'xyz@3446',
     avatar: "https://i.pravatar.cc/100?u=zz",
 }
 const initialState = {
