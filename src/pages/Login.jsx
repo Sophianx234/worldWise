@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom"
 
 function Login() {
     const {isAuthenticated, user, dispatch } = useAuth()
-    const [mail , setMail] = useState('dx4336969@gmail.com')
-    const [pass , setPass] = useState('damianx123')
+    const [mail , setMail] = useState('boruto@gmail.com')
+    const [pass , setPass] = useState('xyz@223344')
     const navigate = useNavigate();
     function handleLogin(e){
         e.preventDefault();
